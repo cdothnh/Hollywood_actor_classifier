@@ -5,11 +5,11 @@ import back_MLP
 
 app = Flask(__name__)
 
-@app.route("/", methods = ['POST'])
+@app.route("/")
 def index():
    	return render_template("app.html")
 
-@app.route('/classify_image', methods = ['GET'])
+@app.route('/classify_image', methods = ['GET','POST'])
 def classify_image():
     image_data = request.form['image_data']
 
@@ -22,4 +22,4 @@ def classify_image():
 
 if __name__ == "__main__":
     back_MLP.load_saved_model()
-    app.run(port=3000, debug=True)
+    app.run()
