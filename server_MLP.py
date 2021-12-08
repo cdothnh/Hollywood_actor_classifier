@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
    	return render_template("app.html")
 
-@app.route('/classify_image')
+@app.route('/classify_image', methods = ['POST'])
 def classify_image():
     image_data = request.form['image_data']
 
